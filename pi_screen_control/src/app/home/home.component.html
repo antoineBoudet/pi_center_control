@@ -1,0 +1,66 @@
+<div style="margin-left: 10px;">
+	<div class="col-md-2 border" style="max-height: 800px;">
+		<div class="col-md-12 mouse" style="margin-top: 30px;" (click)="tabControl('video')">
+			<div class="note note-info">
+				<h4 class="block">Videos</h4>
+			</div>
+		</div>
+		<div class="col-md-12 mouse" (click)="tabControl('images')">
+			<div class="note note-info">
+				<h4 class="block">Images</h4>
+			</div>
+		</div>
+		<div class="col-md-12 mouse" (click)="tabControl('musique')">
+			<div class="note note-info">
+				<h4 class="block">Musiques</h4>
+			</div>
+		</div>
+		<!--
+		<div class="col-md-12 borderWithoutHeight">
+		</div>
+		<div class="col-md-12" style="margin-top: 20px;">
+			<span class="border-menu mouse" (click)="activOptMenu('copy')">Copy</span>
+		</div>
+		<div *ngIf="_optMenuCopy == true" class="form-group col-md-12" style="margin-top: 20px;">
+		  <input type="text" class="form-control" id="copyFrom" placeholder="{{doSomethingFromMess}}"/>
+		  <input type="text" class="form-control" id="copyDest" placeholder="à ..."/>
+		  <button type="button" class="btn btn-success" style="width: 49%;" (click)="desactivOptMenu('copy')">Valider</button>
+		  <button type="button" class="btn btn-danger" style="width: 49%;" (click)="desactivOptMenu('copy')">Anuler</button>
+		</div>
+		<div class="col-md-12" style="margin-top: 20px;">
+			<span class="border-menu mouse" (click)="activOptMenu('move')">Move</span>
+		</div>
+		<div *ngIf="_optMenuMove == true" class="form-group col-md-12" style="margin-top: 20px;">
+		  <input type="text" class="form-control" id="moveFrom" placeholder="{{doSomethingFromMess}}"/>
+		  <input type="text" class="form-control" id="moveDest" placeholder="à ..."/>
+		  <button type="button" class="btn btn-success" style="width: 49%;" (click)="desactivOptMenu('move')">Valider</button>
+		  <button type="button" class="btn btn-danger" style="width: 49%;" (click)="desactivOptMenu('move')">Anuler</button>
+		</div>
+		<div class="col-md-12" style="margin-top: 20px;">
+			<span class="border-menu mouse" (click)="activOptMenu('rename')">Rename</span>
+		</div>
+		<div *ngIf="_optMenuRename == true" class="form-group col-md-12" style="margin-top: 20px;">
+		  <input type="text" class="form-control" id="renameFrom" placeholder="De ..."/>
+		  <input type="text" class="form-control" id="renameDest" placeholder="à ..."/>
+		  <button type="button" class="btn btn-success" style="width: 49%;" (click)="desactivOptMenu('rename')">Valider</button>
+		  <button type="button" class="btn btn-danger" style="width: 49%;" (click)="desactivOptMenu('rename')">Anuler</button>
+		</div>
+		<div class="col-md-12" style="margin-top: 20px; margin-bottom: 30px;">
+			<span class="border-menu mouse" (click)="activOptMenu('remove')">remove</span>
+		</div>
+		<div *ngIf="_optMenuRemove == true" class="form-group col-md-12" style="margin-top: 20px;">
+		  <input type="text" class="form-control" id="renameFrom" placeholder="De ..."/>
+		  <input type="text" class="form-control" id="renameDest" placeholder="à ..."/>
+		  <button type="button" class="btn btn-success" style="width: 49%;" (click)="desactivOptMenu('remove')">Valider</button>
+		  <button type="button" class="btn btn-danger" style="width: 49%;" (click)="desactivOptMenu('remove')">Anuler</button>
+		</div> -->
+	</div>
+</div>
+
+<div>
+	<div class="col-md-9" style="max-height: 800px;">
+		<videoComponent [_listDir]="_listDir" *ngIf="_path == '/video'"></videoComponent>
+		<imageComponent [_listDir]="_listDir" *ngIf="_path == '/images'"></imageComponent>
+		<musiqueComponent [_listDir]="_listDir" *ngIf="_path == '/musique'"></musiqueComponent>
+	</div>
+</div>

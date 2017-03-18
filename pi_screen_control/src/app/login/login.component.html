@@ -1,0 +1,38 @@
+<h1 style="text-align: center;">Welcome to Pi Center Control</h1>
+<div class="auth-main">
+  <div class="auth-block">
+    <form class="form-horizontal">
+      <div class="form-group row">
+        <div class="col-md-10">
+          <input type="email" class="form-control" id="inputEmail" placeholder="Email" autocomplete="off" autofocus>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-10">
+          <input type="password" class="form-control" id="inputPassword" placeholder="Password" (keyup.enter)="signIn()">
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-10">
+          <div class="alert alert-danger" *ngIf="_displayErrorLogin">
+            <strong>Incorrect Password</strong>Try again, please !
+          </div>
+          <button type="button" class="btn btn-success" (click)="signIn()">Sign in</button>
+          <a routerLink="/login" class="forgot-pass">Forgot password?</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="col-md-5 border" style="margin-left: 20px; margin-top: 50px; background-color: #D3D8E8">
+  <div class="col-md-offset-1" style="margin-top: 10px;">
+    <span style="font-size: 20px;">Watch your video, your movies.</span>
+  </div>
+  <div class="col-md-offset-1" style="margin-top: 10px;">
+    <span style="font-size: 20px;">Or share with your friends many great moments while watching your photo gallery.</span>
+  </div>
+  <div class="col-md-offset-4" style="margin-top: 10px; margin-bottom: 10px;">
+    <button type="button" style="width: 100px; heigth: 30px;" class="btn btn-success">Sign up</button>
+  </div>
+</div>

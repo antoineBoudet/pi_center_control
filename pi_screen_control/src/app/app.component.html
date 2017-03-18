@@ -1,0 +1,30 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header" style="width: 500px;">
+    <a class="navbar-brand" href="#" style="color: white;font-weight: bold;">Pi Screen Control</a>
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+  <div id="navbar" class="collapse navbar-collapse">
+      <div style="float:right;line-height:50px;margin-right:15px;">
+          <a class="mouse" style="color: white">[{{_login}}]<span style="padding-left: 10px;" class="glyphicon glyphicon-user"></span></a>
+      </div>
+  </div>
+</nav>
+
+<div style="margin-top: 100px;">
+  <router-outlet></router-outlet>
+</div>
+
+<div style="margin-top: 100px;" class="navbar-fixed-bottom">
+  <footer class="footer">
+    <div class="container">
+      <p class="text-muted">
+      <strong>2017 <a href="/">Pi-center-control</a>. </strong>
+      </p>
+    </div>
+  </footer>
+</div>

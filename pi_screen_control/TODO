@@ -1,0 +1,19 @@
+Part video:
+			-> split on the two part.
+			-> Improve architecture.
+			-> Script python for recover the movie poster.
+
+Part picture:
+	-> Add diaporama.
+
+Part music:
+	-> Improve display of each music.
+
+-> Improve the architecture of this application.
+
+-> Implement those differents options:	-> copy
+										-> move
+										-> rename
+										-> remove.
+
+-> Login page.

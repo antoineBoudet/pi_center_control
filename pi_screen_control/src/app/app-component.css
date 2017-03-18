@@ -1,0 +1,7 @@
+.mouse {
+  cursor: pointer;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	background-color: #FF9F1C !important;
+}

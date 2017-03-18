@@ -1,0 +1,160 @@
+<div class="row">
+	<div style="margin-left: 30px;">
+		<!-- <i class="fa fa-arrow-left" aria-hidden="true" (click)="goToBack()"></i> -->
+		<!-- <span>{{_path}}</span> -->
+		<h3 style="text-align: center;">Pictures</h3>
+		<div *ngIf="_listDir != ''">
+			<div *ngFor="let item of _listDir; let i='index'">
+				<div *ngIf="i >= nbMinFile && i < nbMaxFile">
+					<div [class.col-md-2]="item.name != fileSelected" [class.col-md-6]="item.name == fileSelected" style="margin-top: 10px;">
+						<i *ngIf="item.type == 'folder'" class="fa fa-folder mouse" aria-hidden="true" style="font-size: 30px;" (click)="changeFolder(item.name)">
+						</i><br *ngIf="item.type == 'folder'"/>
+						<p *ngIf="item.type == 'folder'">{{item.name}}</p>
+
+						<div *ngIf="item.type == 'img'">
+							<img src="http://localhost:8080/images/{{item.nameExtension}}" (click)="selectedImg(item.nameExtension)" data-toggle="modal" data-target="#readImg" class="mouse" style="width: 130px; height: 100px;">
+							<p>{{item.name}}</p>
+							<!-- modal -->
+							<div id="readImg" class="modal fade" role="dialog">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-body row">
+											<div class="col-md-1">
+												<i class="fa fa-arrow-left mouse" style="margin-top: 200px;" (click)="imgPrev(imgSelected)" aria-hidden="true"></i>
+											</div>
+											<div class="col-md-10">
+												<img src="http://localhost:8080/images/{{imgSelected}}" style="width: 100%; height: 460px;">
+											</div>
+											<div class="col-md-1">
+												<i class="fa fa-arrow-right mouse" style="margin-top: 200px;" (click)="imgNext(imgSelected)" aria-hidden="true"></i>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div *ngIf="item.type == 'video'">
+							<img *ngIf="item.name != fileSelected" [src]="imgTest" class="mouse" style="width: 120px; height: 150px;" (click)="selectedFile(item.name, item.nb)">
+							<div *ngIf="item.name == fileSelected" id="Global">
+								<div id="left">
+									<img  [src]="imgTest" class="mouse" style="width: 130; height: 150px;" (click)="selectedFile(item.name, item.nb)">
+								</div>
+								<div id="right">
+									<resumeComponent [specVideo]="specVideo"></resumeComponent>
+								</div>
+							</div>
+							<p *ngIf="item.name != fileSelected">{{item.name}}</p>
+						</div>
+
+						<div *ngIf="item.type == 'musiques'">
+							<i class="fa fa-music mouse" aria-hidden="true" (click)="selectedMusiques(item.name)" data-toggle="modal" data-target="#readMusiques"></i>
+							<p>{{item.name}}</p>
+							<div id="readMusiques" class="modal fade" role="dialog">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-body">
+											<audio controls>
+												<source src="http://localhost:8080/musique/{{musiquesSelected}}" type="audio/mpeg"/>
+											</audio>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<i *ngIf="item.type == 'undefined'" class="fa fa-file" aria-hidden="true" style="width: 120px; height: 150px;">
+						</i><br *ngIf="item.type == 'undefined'"/>
+						<p *ngIf="item.type == 'undefined'">{{item.name}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div style="margin-left: 30px;">
+		<h4 *ngIf="fileSelected == ''">
+			<i class="fa fa-arrow-left mouse" aria-hidden="true" (click)="back()"></i>
+			<span style="margin-left: 10px;margin-right: 10px;">{{nbPages + 1}}</span>
+			<i class="fa fa-arrow-right mouse" aria-hidden="true" (click)="next()"></i>
+		</h4>
+		<div class="col-md-12 borderWithoutHeight" style="margin-top: 30px;margin-bottom: 30px;">
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div style="margin-left: 30px;">
+		<!-- <i class="fa fa-arrow-left" aria-hidden="true" (click)="goToBack()"></i> -->
+		<!-- <span>{{_path}}</span> -->
+		<h3 style="text-align: center;">The most popular</h3>
+		<div *ngIf="_listDir != ''">
+			<div *ngFor="let item of _listDir; let i='index'">
+				<div *ngIf="i < 6">
+					<div [class.col-md-2]="item.name != fileSelected" [class.col-md-6]="item.name == fileSelected" style="margin-top: 10px;">
+						<i *ngIf="item.type == 'folder'" class="fa fa-folder mouse" aria-hidden="true" style="font-size: 30px;" (click)="changeFolder(item.name)">
+						</i><br *ngIf="item.type == 'folder'"/>
+						<p *ngIf="item.type == 'folder'">{{item.name}}</p>
+
+						<div *ngIf="item.type == 'img'">
+							<img src="http://localhost:8080/images/{{item.nameExtension}}" (click)="selectedImg(item.nameExtension)" data-toggle="modal" data-target="#readImg" class="mouse" style="width: 130px; height: 100px;">
+							<p>{{item.name}}</p>
+							<!-- modal -->
+							<div id="readImg" class="modal fade" role="dialog">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-body row">
+											<div class="col-md-1">
+												<i class="fa fa-arrow-left mouse" style="margin-top: 200px;" (click)="imgPrev(imgSelected)" aria-hidden="true"></i>
+											</div>
+											<div class="col-md-10">
+												<img src="http://localhost:8080/images/{{imgSelected}}" style="width: 100%; height: 460px;">
+											</div>
+											<div class="col-md-1">
+												<i class="fa fa-arrow-right mouse" style="margin-top: 200px;" (click)="imgNext(imgSelected)" aria-hidden="true"></i>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div *ngIf="item.type == 'video'">
+							<img *ngIf="item.name != fileSelected" [src]="imgTest" class="mouse" style="width: 120px; height: 150px;" (click)="selectedFile(item.name, item.nb)">
+							<div *ngIf="item.name == fileSelected" id="Global">
+								<div id="left">
+									<img  [src]="imgTest" class="mouse" style="width: 130; height: 150px;" (click)="selectedFile(item.name, item.nb)">
+								</div>
+								<div id="right">
+									<resumeComponent [specVideo]="specVideo"></resumeComponent>
+								</div>
+							</div>
+							<p *ngIf="item.name != fileSelected">{{item.name}}</p>
+						</div>
+
+						<div *ngIf="item.type == 'musiques'">
+							<i class="fa fa-music mouse" aria-hidden="true" (click)="selectedMusiques(item.name)" data-toggle="modal" data-target="#readMusiques"></i>
+							<p>{{item.name}}</p>
+							<div id="readMusiques" class="modal fade" role="dialog">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-body">
+											<audio controls>
+												<source src="http://localhost:8080/musique/{{musiquesSelected}}" type="audio/mpeg"/>
+											</audio>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<i *ngIf="item.type == 'undefined'" class="fa fa-file" aria-hidden="true" style="width: 120px; height: 150px;">
+						</i><br *ngIf="item.type == 'undefined'"/>
+						<p *ngIf="item.type == 'undefined'">{{item.name}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
