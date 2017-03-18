@@ -23,3 +23,6 @@ Pi-screen-control based on angular 2.
     For use this appication on a server you can install nginx or apache. Because npm start works but it's for devellop your application.
 
 For use it on your devices, you must enter the ip adress on your raspery pi followed by : 3000, like this: xx.xx.xxx.xxx:3000.
+
+Login : root@root.fr
+Password : root
