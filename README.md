@@ -2,7 +2,7 @@ pi-center-control
 
 This project allows you to uses your raspberry pi 2 or 3 as a media center.
 
-You can install OSMC or kodi on your raspberry. This allows you to watch all your movies, pictures or musics on your TV whith a beautiful screen.
+You can install OSMC or kodi on your raspberry. This allows you to watch all your movies, pictures or musics on your TV with a beautiful screen.
 
 All your file (movies, ...) can be located on a hard drive and connected on your raspberry pi. I don't put all steps to install OSMC or how to use it. But this project allows you to have the same objective than OSMC, but on your PC, tablet or smarthones.
 
