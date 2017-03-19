@@ -8,9 +8,9 @@ All your file (movies, ...) can be located on a hard drive and connected on your
 
 Indeed, this project is split on two steps.
 
-The first is an IHM makes with angular2 (called pi-screen-controll): -> On this IHM you have different screen, with a view on your differents files. Each tab correspond to a folder. (Videos folder, pictures folder, music folder, ...). For exemple, in videos folder you have a lot of video, and you can click on ones of them, and do streaming on it. The same things for the gallery of picture.
+The first is an IHM makes with angular2 (called pi-screen-controll): On this IHM you have different screen, with a view on your differents files. Each tab correspond to a folder. (Videos folder, pictures folder, music folder, ...). For exemple, in videos folder you have a lot of video, and you can click on ones of them, and do streaming on it. The same things for the gallery of picture.
 
-The second part of this project is the server part (called pi-server-controll): -> TO have your entire file on your screen. You have to make a server who allows this. I have chosen API with python for this part.
+The second part of this project is the server part (called pi-server-controll): To have your entire file on your screen. You have to make a server who allows this. I have chosen API with python for this part.
 
 How to install all of this.
 
